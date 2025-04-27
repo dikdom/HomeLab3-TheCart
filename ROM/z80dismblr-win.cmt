@@ -1,0 +1,139 @@
+; Waits for the screen drawing is finished then returns so drawing to the screen 
+; after this method can avoid screen flickering
+00f6 WAIT_FOR_SYNC
+
+
+
+; Basic USR vector, 2 bytes
+; default: 157Ch
+4000 VECT_BASIC_USR
+
+;
+; Vector of character input, 2 bytes
+; default: 035Ch
+4002 VECT_CH_INPUT
+
+;
+; Vector of character output, 2 bytes
+; default: 0283h
+4004 VECT_CH_OUTPUT
+
+;
+; In case F1 or F2 is pressed besides a button this vector is called.
+; A contains the code of the pressed button, and flag Z and C is set
+; respectively if F1 or F2 was pressed.
+; default: 0600h
+4006 VECT_F1_F2
+
+;
+; SHIFT ALTER FLAG
+; Tells if the a button is pressed without SHIFT then capital or small letters should
+; be printed. Even number means small letter
+; default: 1Bh
+4008 FLAG_SHIFT_ALTER
+
+;
+; Value of 0 means printing stops at the end of the screen and continues only when 
+; SHIFT/SPACE is pressed
+; defult: A7h
+4009 FLAG_SCROLL_STOP
+
+;
+; Value of 1 means 64 chars wide screen, value of 2 means 32 chars wide screen, but
+; this requires HW switch also
+; default: 01h
+400A FLAG_32_64
+
+;
+; This is the output buffer pointer, used for printing screen, 1 byte
+; default: 60h
+400B BUFFER_POINTER
+
+;
+; Vector of RST_1 (SAVE/LOAD), 2 bytes long
+; default: C105h (???)
+400C VECT_RST_1
+
+
+;
+; Vector for INPUT#
+400E VECT_INPUT
+
+;
+; Vector for PRINT#
+4010 VECT_PRINT
+
+; 
+; Variable for built-in monitor
+4012 VAR_MON01
+
+;
+; Cursor address in the Video RAM
+4014 ADDR_CURSOR_POS
+
+;
+; End of RAM (high mem)
+4016 ADDR_END_OF_RAM
+
+;
+; End of BASIC program
+4018 ADDR_END_OF_BASIC_PRG
+
+;
+; End of table of BASIC variables
+401A ADDR_END_OF_VARIABLES
+
+;
+; End of BASIC strings
+401C ADDR_END_OF_STRINGS
+
+;
+; The P accumulator address. 4 bytes
+401E VAR_P
+
+;
+; Stack on Page 1, 10 bytes
+4022 STACK_PAGE1
+
+;
+; Variable for string handling routines
+402C VAR_BASIC_STRING
+
+;
+; The number of current BASIC line being executed
+402E VAR_BASIC_CUR_LINE
+
+;
+; Beginning of the BASIC PRG
+4030 ADDR_START_OF_BASIC_PRG
+
+;
+; BASIC flags
+4032 VAR_BASIC_FLAGS
+
+;
+; SP storage during page switch
+4033 VAR_SP_STORAGE
+
+;
+; Address of next command to be executed by the command CONT
+4035 ADDR_BASIC_CMD_4_CONT
+
+;
+; Address of the next data for the READ BASIC command
+4037 ADDR_NEXT_BASIC_DATA_4_READ
+
+;
+; Address of the first mirror of the screen RAM
+F000 ADDR_SCREEN1
+
+; Address of the second mirror of the screen RAM. ROM tends to use this address.
+F800 ADDR_SCREEN
+
+;
+; Address of the second half of the screen RAM
+F800 ADDR_SCREEN2
+
+;
+; RST 8: CAS_SAVE_LOAD_JMP
+062A

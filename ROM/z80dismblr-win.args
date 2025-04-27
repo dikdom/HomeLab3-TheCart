@@ -1,0 +1,59 @@
+--bin 0000 HL3.rom 
+--comments z80dismblr-win.cmt
+--out HL3.lst
+--addbytes
+
+--codelabel 0000h RESET
+--codelabel 0008h CAS_SAVE_LOAD_JMP
+--codelabel 0018h INPUT_CHAR
+--codelabel 0020h CHECK_FOR_60h
+--codelabel 0028h OUTPUT_CHAR
+--codelabel 0030h USR_RST_6
+--codelabel 0038h USR_RST_7
+--codelabel 003Dh INIT_CONT
+--codelabel 0066h NMI 
+--codelabel 0085h READ_KEYB
+--codelabel 00F6h WAIT_FOR_SYNC
+--codelabel 0105h BEEP_FIXED
+--codelabel 018fh PRINT_STRING
+--codelabel 01A0h PRINT_HEX4
+--codelabel 01A5h PRINT_HEX2
+--codelabel 01fbh RST5_SCROLL
+--codelabel 0220h RST5_CLS
+--codelabel 0283h OUTPUT_CHAR_ENTRY
+--codelabel 035ch INPUT_CHAR_ENTRY
+--codelabel 037ch MONITOR
+--codelabel 0389h MONITOR_R
+--codelabel 03abh MONITOR_D
+--codelabel 03d7h MONITOR_S
+--codelabel 0428h
+--codelabel 050Fh CHECK_2_4KB_IN_SYSINIT
+--codelabel 0533h SWITCH_TO_PAGE2
+--codelabel 0543h READ_ONE_LINE
+--codelabel 05beh SWITCH_TO_PAGE1
+--codelabel 0616h LOAD_1_BYTE
+--codelabel 061fh LOAD_HDR
+--codelabel 06ach SAVE_HDR
+--codelabel 06c9h SAVE_1_BYTE
+--codelabel 072eh LOAD_CONT_CHECK_PRGEND
+--codelabel 074eh LOAD_FIRST_VALID_REC
+--codelabel 0751h LOAD_ONE_REC
+--codelabel 07a3h SAVE
+--codelabel 0ca9h TOKENIZER
+--codelabel 0d2dh CMD_INTERPRETER
+--codelabel 0d63h PRG_LOAD_INIT
+--codelabel 10cdh BASIC_INTERPRETER
+--codelabel 12f1h 
+--codelabel 132ah
+--codelabel 1570h PRINT_SN_ERROR
+--codelabel 175Dh GOTO
+--codelabel 1770h GOSUB
+--codelabel 179Ah RUN
+--codelabel 179Dh AUTOSTART
+--codelabel 1959h CALL_END
+--codelabel 195fh CALL
+--codelabel 1d8fh
+--codelabel 1d4dh BASIC_SIMPLE_ENTRY_POINT
+--codelabel 1ef0h LOAD
+--codelabel 2000h BASIC_ENH_START
+--codelabel 3ff6h SETUP_HL_STARTBASIC
