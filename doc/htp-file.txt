@@ -1,0 +1,24 @@
+A HTP formátum
+==============
+
+A HTP egy kimondottan a HomeLab-re szabott kazettaállomány formátum.
+Gyakorlatilag a HomeLab által byte-ra pontosan magnóra rögzített adatokat
+tartalmazza a szinkronjelek nélkül, de a 256 bevezető 0 byte-tal és
+az A5h fejlécprompttal. Elvi szinten kompatibilis mind a régi (Aircomp/HL2)
+mind az újabb (HL3/4) gépekkel.
+
+Egy HTP file konkrét felépítése a következő:
+
+Offset Tartalom
+0 csupa 0 bit
+256 A5h
+257 'n' karakter hosszú fejléc (állománynév)
+257+n+1 fejléc záró 0 karakter.
+257+n+2 blokk betöltési cím (LO/HI byte)
+257+n+4 blokk hossza (LO/HI byte) : 'm'
+257+n+5 blokk adat ('m' darab byte)
+257+n+m+6 checksum (az adatbyte-ok összegének alsó byte-ja)
+257+n+m+7 blokk záró 0 byte
+
+Ha a blokk záró byte nem nulla, akkor újabb blokk következik, de ennek már
+nincs fejléce.
